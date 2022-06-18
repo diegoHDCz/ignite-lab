@@ -1,0 +1,65 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "sourceMap": false,
+    "isolatedModules": true,
+    "noImplicitAny": false,
+    "noImplicitReturns": true,
+    "noImplicitThis": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "removeComments": false,
+    "preserveConstEnums": true,
+    "jsx": "preserve",
+    "baseUrl": "./src",
+    "declaration": true,
+    "types": [
+      "@emotion/react/types/css-prop"
+    ],
+    "typeRoots": [
+      "../node_modules/@types"
+    ],
+    "paths": {
+      "@static/*": [
+        "../public/static/*"
+      ],
+      "@generated/*": [
+        "/__generated__/*",
+        "/**/__generated__/*"
+      ],
+      "@*": [
+        "/*"
+      ]
+    },
+    "incremental": true
+  },
+  "exclude": [
+    "node_modules",
+    "public",
+    "server.js",
+    "**/*.spec.ts",
+    "**/*.spec.tsx",
+    "**/*.test.ts",
+    "**/*.test.tsx"
+  ],
+  "include": [
+    "next-env.d.ts",
+    "/src/**/*.ts",
+    "/src/**/*.tsx",
+    "next.config.js"
+  ]
+}
