@@ -7,6 +7,7 @@ import { DatabaseModule } from '../database/database.module';
 import { CustomersService } from '../services/customers.service';
 import { ProductsService } from '../services/products.service';
 import { PurchasesService } from '../services/purchases.service';
+import { CustomersResolver } from './graphql/resolvers/customers.resolver';
 import { ProductsResolver } from './graphql/resolvers/products.resolver';
 import { PurchaseResolver } from './graphql/resolvers/purchases.resolver';
 
@@ -20,9 +21,12 @@ import { PurchaseResolver } from './graphql/resolvers/purchases.resolver';
     }),
   ],
   providers: [
+    //resolvers
     ProductsResolver,
-    ProductsService,
     PurchaseResolver,
+    CustomersResolver,
+    //services
+    ProductsService,
     PurchasesService,
     CustomersService,
   ],

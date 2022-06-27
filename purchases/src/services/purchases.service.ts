@@ -17,6 +17,16 @@ export class PurchasesService {
       },
     });
   }
+  listAllFromCustomer(customerId: string) {
+    return this.prisma.purchase.findMany({
+      where: {
+        customerId,
+      },
+      orderBy: {
+        createdAt: 'desc',
+      },
+    });
+  }
   async createPurchase({ customerId, productId }: CreatePurchaseDTO) {
     const product = await this.prisma.product.findUnique({
       where: {
@@ -28,7 +38,7 @@ export class PurchasesService {
       throw new Error('product not found');
     }
 
-    await this.prisma.purchase.create({
+    return await this.prisma.purchase.create({
       data: {
         customerId,
         productId,

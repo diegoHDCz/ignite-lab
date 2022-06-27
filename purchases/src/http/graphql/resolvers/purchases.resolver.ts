@@ -29,7 +29,7 @@ export class PurchaseResolver {
     return this.pruchasesService.listAllPurchases();
   }
   @ResolveField(() => Product)
-  product(@Parent() purchase: Purchase) {
+  async product(@Parent() purchase: Purchase) {
     return this.productService.getProductById(purchase.productId);
   }
 
