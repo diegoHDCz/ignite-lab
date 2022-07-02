@@ -33,6 +33,8 @@ model Course {
 model Enrollment {
   id String @id @default(uuid())
 
+  authUserId String? @unique
+
   student   Student @relation(fields: [studentId], references: [id])
   studentId String
 
